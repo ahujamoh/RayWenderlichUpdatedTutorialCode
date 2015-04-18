@@ -78,8 +78,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="568" placeholderIntrinsicHeight="418" translatesAutoresizingMaskIntoConstraints="NO" id="ePX-q2-Rt2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ePX-q2-Rt2">
                                 <rect key="frame" x="16" y="66" width="568" height="418"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="418" id="fqs-75-WEG"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBZ-Fj-AR7" customClass="RWTRateView">
                                 <rect key="frame" x="16" y="492" width="568" height="81"/>
@@ -101,23 +104,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9ii-Eq-dRl" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="3Fn-2y-9sM"/>
-                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="BYi-vA-2ca"/>
+                            <constraint firstItem="hBZ-Fj-AR7" firstAttribute="top" secondItem="ePX-q2-Rt2" secondAttribute="bottom" constant="8" symbolic="YES" id="6xQ-IW-ccc"/>
+                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="leading" secondItem="swT-Cr-sjr" secondAttribute="leading" id="7ti-FT-xjg"/>
                             <constraint firstItem="GIL-B0-q2D" firstAttribute="top" secondItem="MMQ-IT-qOo" secondAttribute="top" constant="264" id="Dp9-93-fo1"/>
-                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="F0Y-qT-Guw"/>
-                            <constraint firstItem="swT-Cr-sjr" firstAttribute="top" secondItem="ePX-q2-Rt2" secondAttribute="top" id="HRT-Pk-F28"/>
                             <constraint firstAttribute="centerX" secondItem="GIL-B0-q2D" secondAttribute="centerX" id="KHx-FE-Zie"/>
+                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="top" secondItem="9ii-Eq-dRl" secondAttribute="bottom" constant="8" symbolic="YES" id="OFw-m9-wmG"/>
                             <constraint firstItem="hBZ-Fj-AR7" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="S0Z-mP-2kK"/>
                             <constraint firstAttribute="centerX" secondItem="hBZ-Fj-AR7" secondAttribute="centerX" id="XmR-QU-eW0"/>
-                            <constraint firstItem="hBZ-Fj-AR7" firstAttribute="top" secondItem="ePX-q2-Rt2" secondAttribute="bottom" constant="8" id="Z7O-bh-gso"/>
                             <constraint firstItem="9ii-Eq-dRl" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="8" id="ahg-ka-Rue"/>
                             <constraint firstItem="9ii-Eq-dRl" firstAttribute="trailing" secondItem="MMQ-IT-qOo" secondAttribute="trailingMargin" id="c7g-ca-juz"/>
                             <constraint firstAttribute="centerX" secondItem="9ii-Eq-dRl" secondAttribute="centerX" id="cES-HM-PsP"/>
                             <constraint firstItem="swT-Cr-sjr" firstAttribute="trailing" secondItem="GIL-B0-q2D" secondAttribute="trailing" id="cXZ-Cv-whc"/>
-                            <constraint firstItem="swT-Cr-sjr" firstAttribute="leading" secondItem="ePX-q2-Rt2" secondAttribute="leading" id="p6v-85-ObM"/>
+                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="top" secondItem="swT-Cr-sjr" secondAttribute="top" id="ecz-Qw-hht"/>
                             <constraint firstItem="hBZ-Fj-AR7" firstAttribute="top" secondItem="swT-Cr-sjr" secondAttribute="bottom" constant="8" symbolic="YES" id="qzd-WL-V3s"/>
                             <constraint firstItem="hBZ-Fj-AR7" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" id="uBV-tJ-aUa"/>
-                            <constraint firstAttribute="centerX" secondItem="ePX-q2-Rt2" secondAttribute="centerX" id="uDA-de-2P9"/>
-                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="top" secondItem="9ii-Eq-dRl" secondAttribute="bottom" constant="8" id="x0K-qg-5Xz"/>
+                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="leading" secondItem="GIL-B0-q2D" secondAttribute="leading" id="w0p-nz-LgZ"/>
+                            <constraint firstItem="ePX-q2-Rt2" firstAttribute="trailing" secondItem="swT-Cr-sjr" secondAttribute="trailing" id="wei-dA-KU2"/>
                             <constraint firstItem="GIL-B0-q2D" firstAttribute="leading" secondItem="9ii-Eq-dRl" secondAttribute="leading" id="zwD-Yi-FxP"/>
                         </constraints>
                     </view>
