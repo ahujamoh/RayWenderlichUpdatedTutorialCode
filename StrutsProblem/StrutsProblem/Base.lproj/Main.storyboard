@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="StrutsProblem" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r31-Ak-Ah9"/>
+                        <viewControllerLayoutGuide type="bottom" id="mct-Sm-9OW"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="bsF-XM-J8o">
-                                <rect key="frame" x="20" y="20" width="130" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bsF-XM-J8o">
+                                <rect key="frame" x="40" y="20" width="250" height="270"/>
                                 <color key="backgroundColor" red="0.044609673249304982" green="1" blue="0.34085750324634756" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" id="inj-UK-FB6">
-                                <rect key="frame" x="170" y="20" width="130" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inj-UK-FB6">
+                                <rect key="frame" x="310" y="20" width="250" height="270"/>
                                 <color key="backgroundColor" red="1" green="0.93532325152797635" blue="0.10923865555992662" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" id="Cpe-B7-WhM">
-                                <rect key="frame" x="20" y="294" width="280" height="254"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cpe-B7-WhM">
+                                <rect key="frame" x="40" y="310" width="520" height="270"/>
                                 <color key="backgroundColor" red="0.041063351592171449" green="0.4692701567905293" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="inj-UK-FB6" firstAttribute="height" secondItem="bsF-XM-J8o" secondAttribute="height" id="I0w-nE-BJG"/>
+                            <constraint firstItem="inj-UK-FB6" firstAttribute="top" secondItem="r31-Ak-Ah9" secondAttribute="bottom" id="I6b-eC-Png"/>
+                            <constraint firstItem="Cpe-B7-WhM" firstAttribute="top" secondItem="bsF-XM-J8o" secondAttribute="bottom" constant="20" id="Kpn-Fc-jfb"/>
+                            <constraint firstItem="Cpe-B7-WhM" firstAttribute="height" secondItem="bsF-XM-J8o" secondAttribute="height" id="LXI-ae-QSi"/>
+                            <constraint firstItem="Cpe-B7-WhM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="OFi-yb-NEC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cpe-B7-WhM" secondAttribute="trailing" constant="20" id="S5T-1w-d52"/>
+                            <constraint firstItem="mct-Sm-9OW" firstAttribute="top" secondItem="Cpe-B7-WhM" secondAttribute="bottom" constant="20" id="WfK-0N-cxp"/>
+                            <constraint firstItem="inj-UK-FB6" firstAttribute="width" secondItem="bsF-XM-J8o" secondAttribute="width" id="Wou-M3-aSV"/>
+                            <constraint firstItem="inj-UK-FB6" firstAttribute="leading" secondItem="bsF-XM-J8o" secondAttribute="trailing" constant="20" id="XOb-Sp-heY"/>
+                            <constraint firstItem="bsF-XM-J8o" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="hJg-3x-59U"/>
+                            <constraint firstItem="bsF-XM-J8o" firstAttribute="top" secondItem="r31-Ak-Ah9" secondAttribute="bottom" id="iWf-ah-uTI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="inj-UK-FB6" secondAttribute="trailing" constant="20" id="ymR-hT-JZz"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomView" destination="Cpe-B7-WhM" id="Ksc-Vb-iy1"/>
@@ -38,7 +54,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="141" y="300"/>
+            <point key="canvasLocation" x="264.375" y="316.9014084507042"/>
         </scene>
     </scenes>
 </document>
