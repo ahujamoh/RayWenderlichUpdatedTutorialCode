@@ -25,7 +25,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0O8-f4-7bq">
-                                <rect key="frame" x="154" y="448" width="46" height="30"/>
+                                <rect key="frame" x="137" y="448" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.044609673250000002" green="1" blue="0.34085750320000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -37,8 +37,8 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="WF6-I0-HBl" secondAttribute="bottom" constant="20" id="Bh2-s5-ubr"/>
                             <constraint firstItem="WF6-I0-HBl" firstAttribute="top" secondItem="0O8-f4-7bq" secondAttribute="bottom" constant="40" id="org-GQ-fRi"/>
+                            <constraint firstItem="WF6-I0-HBl" firstAttribute="centerX" secondItem="0O8-f4-7bq" secondAttribute="centerX" id="w27-pg-6vB"/>
                             <constraint firstItem="WF6-I0-HBl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yg0-Vh-xyb"/>
-                            <constraint firstItem="WF6-I0-HBl" firstAttribute="trailing" secondItem="0O8-f4-7bq" secondAttribute="trailing" id="zRb-nS-bWy"/>
                         </constraints>
                     </view>
                 </viewController>
