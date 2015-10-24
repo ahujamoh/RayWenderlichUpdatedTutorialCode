@@ -25,9 +25,13 @@ import UIKit
 
 class ChecklistDetailViewController: UITableViewController {
   
-  let notesViewHeight: CGFloat = 128.0
+    let notesViewHeight: CGFloat = 128.0
 
-  var checklist = checklists.first!
+    var checklist = checklists.first!
+    
+    @IBOutlet var notesView: UIView!
+    
+    @IBOutlet var notesTextView: UITextView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -63,7 +67,31 @@ extension ChecklistDetailViewController {
       self.tableView(tableView, didSelectRowAtIndexPath: indexPath)
     }
   }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        // 1
+        guard let cell = tableView.cellForRowAtIndexPath(indexPath) as?
+            ChecklistItemTableViewCell else {
+                return
+        }
+        
+        // 2
+        tableView.beginUpdates()
+        // 3
+        if cell.stackView.arrangedSubviews.contains(notesView) {
+            removeNotesView()
+        } else {
+            addNotesViewToCell(cell)
+            
+            // 4 
+            notesTextView.text = checklist.items[indexPath.row].notes
+        }
+        
+        // 5
+        tableView.endUpdates()
+    }
 }
+
 
 // MARK: - UITableViewDataSource
 extension ChecklistDetailViewController {
@@ -83,4 +111,21 @@ extension ChecklistDetailViewController {
     
     return cell
   }
+    
+    // MARK: - Private methods
+    func addNotesViewToCell(cell: ChecklistItemTableViewCell) {
+        notesView.heightAnchor
+            .constraintEqualToConstant(notesViewHeight)
+            .active = true
+        notesView.clipsToBounds = true
+        
+        cell.stackView.addArrangedSubview(notesView)
+    }
+    
+    func removeNotesView() {
+        if let stackView = notesView.superview as? UIStackView {
+            stackView.removeArrangedSubview(notesView)
+            notesView.removeFromSuperview()
+        }
+    }
 }
