@@ -4,6 +4,7 @@ RayWenderlichUpdatedTutorialCode
 Learning step by step from RayWenderlich's website in new version of Xcode.
 
   While I learned ios from [Ray's][1] website step by step according to their great tutorials, I found my development environment was a little different from the tutorial's, especially for Xcode 6.1. So I tried to follow their steps in new Xcode and this respository will be used to record my study curves.
+
 ---- 
 ## **[Content][2]** 
 ### **Core Concepts**
