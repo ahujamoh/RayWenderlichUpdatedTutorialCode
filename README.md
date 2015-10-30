@@ -27,9 +27,31 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * [View Debugging in Xcode 6]()
 * [UICollectionView Custom Layout Tutorial: Pinterest]()
 * [UIStackView Tutorial: Introducing Stack Views][19]
+* [iOS 9 Storyboards Tutorial: What’s New in Storyboards?][20]
 
 
-## **[Using Objective-C][20]**
+### **Graphics & Animation APIs**
+* [UIKit Dynamics Tutorial: Getting Started]()
+* [Core Image Tutorial: Getting Started]()
+* [Scene Kit Tutorial: Getting Started]()
+* [Core Graphics Tutorial Part 1: Getting Started]()
+* [Core Graphics Tutorial Part 2: Gradients and Contexts]()
+* [Core Graphics Tutorial Part 3: Patterns and Playgrounds]()
+* [UIKit Dynamics and Swift Tutorial: Tossing Views]()
+* [AsyncDisplayKit Tutorial: Node Hierarchies]()
+* [UIAppearance Tutorial: Getting Started]()
+* [iOS Animation Tutorial: Getting Started]()
+* [iOS Animation Tutorial: Introduction to Easy Animation]()
+* [iOS Animation Tutorial: Custom View Controller Presentation Transitions]()
+
+### **Map & Location APIs**
+* [MapKit Tutorial: Overlay Views]()
+* [MapKit Tutorial: Getting Started]()
+* [Core Location Tutorial: Geofencing]()
+
+
+
+## **[Using Objective-C][36]**
 
 
 
@@ -38,4 +60,5 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 [6]:	https://github.com/qingqinghebiancao/RayWenderlichUpdatedTutorialCode/tree/master/StrutsProblem
 [7]:	https://github.com/qingqinghebiancao/RayWenderlichUpdatedTutorialCode/tree/master/Constraints
 [19]:	/VacationSpots
-[20]:	http://www.raywenderlich.com/tutorial-archive
+[20]:	/Prepped
+[36]:	http://www.raywenderlich.com/tutorial-archive
