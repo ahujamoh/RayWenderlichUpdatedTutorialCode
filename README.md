@@ -132,6 +132,8 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * [How To Make a Custom Control Tutorial: A Reusable Slider]()
 * [How to Create Your Own Slide-Out Navigation Panel in Swift]()
 * [How To Make a Custom Control Tutorial: A Reusable Knob]()
+
+
 #### **Techniques**
 * [How to Port Your App to the iPhone 6, iPhone 6 Plus and iOS 8: Top 10 Tips]()
 * [How To Secure Your App’s Passwords with Safari AutoFill in iOS 8]()
