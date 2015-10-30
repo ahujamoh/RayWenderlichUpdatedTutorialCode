@@ -25,9 +25,11 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * [CALayer Tutorial: Getting Started]()
 * [UISplitViewController Tutorial: Getting Started]()
 * [View Debugging in Xcode 6]()
+* [UICollectionView Custom Layout Tutorial: Pinterest]()
+* [UIStackView Tutorial: Introducing Stack Views][19]
 
 
-## **[Using Objective-C][18]**
+## **[Using Objective-C][20]**
 
 
 
@@ -35,4 +37,5 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 [2]:	http://www.raywenderlich.com/category/ios
 [6]:	https://github.com/qingqinghebiancao/RayWenderlichUpdatedTutorialCode/tree/master/StrutsProblem
 [7]:	https://github.com/qingqinghebiancao/RayWenderlichUpdatedTutorialCode/tree/master/Constraints
-[18]:	http://www.raywenderlich.com/tutorial-archive
+[19]:	/VacationSpots
+[20]:	http://www.raywenderlich.com/tutorial-archive
