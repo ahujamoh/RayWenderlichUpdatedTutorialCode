@@ -148,26 +148,26 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 
 
 ## **[Using Objective-C][112]**
-### **For complete beginners to programming
+### **For complete beginners to programming**
 * [Learn to Code iOS Apps 1: Welcome to Programming]()
 * [Learn to Code iOS Apps 2: Strings, Arrays, Objects and Classes]()
 * [Learn to Code iOS Apps 3: Your First App]()
 * [Learn to Code iOS Apps 4: Making It Beautiful]()
 * [Intro to Object-Oriented Design: Part 1/2]()
 * [Intro to Object-Oriented Design: Part 2/2]()
-### **Experienced programmers but new to Objective-C
+### **Experienced programmers but new to Objective-C**
 * [Objective-C Cheat Sheet and Quick Reference]()
 * [Objectively Speaking: A Crash Course in Objective C for iOS 6]()
 * [Objectively Speaking 2: A Crash Course in Objective C for iOS 6]()
 
-### **Beginning iPhone Programming
+### **Beginning iPhone Programming**
 * [iOS Tutorial: How To Create A Simple iPhone App: Part 1/3][122]
 * [iOS Tutorial: How To Create A Simple iPhone App: Part 2/3][123]
 * [iOS Tutorial: How To Create A Simple iPhone App: Part 3/3][124]
 * [How to Submit Your App to Apple: From No Account to App Store, Part 1]()
 * [How to Submit Your App to Apple: From No Account to App Store, Part 2]()
 
-### **Crash Reporting
+### **Crash Reporting**
 * [My App Crashed – Now What? 1/2]()
 * [My App Crashed – Now What? 2/2]()
 * [Demystifying iOS Application Crash Logs]()
@@ -175,7 +175,7 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * [Overview of iOS Crash Reporting Tools: Part 2/2]()
 
 
-### **Sprite Kit Tutorials
+### **Sprite Kit Tutorials**
 
 
 
