@@ -59,7 +59,7 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 ### **Networking**
 * [Using NSURLProtocol with Swift]()
 * [Working with JSON in Swift Tutorial]()
- * [Alamofire Tutorial Part 1: Getting Started]()
+* [Alamofire Tutorial Part 1: Getting Started]()
 * [User Authentication on iOS with Ruby on Rails and Swift]()
 * [Alamofire Tutorial Part 2: Progress and Caching]()
 * [Parse Tutorial: Getting Started with Web Backends]()
