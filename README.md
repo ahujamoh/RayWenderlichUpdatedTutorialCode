@@ -155,6 +155,7 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * [Learn to Code iOS Apps 4: Making It Beautiful]()
 * [Intro to Object-Oriented Design: Part 1/2]()
 * [Intro to Object-Oriented Design: Part 2/2]()
+
 ### **Experienced programmers but new to Objective-C**
 * [Objective-C Cheat Sheet and Quick Reference]()
 * [Objectively Speaking: A Crash Course in Objective C for iOS 6]()
