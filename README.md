@@ -263,7 +263,6 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * Core Graphics Tutorial for iOS: Glossy Buttons
 * Core Graphics Tutorial for iOS: Patterns
 * Core Graphics Tutorial for iOS: Curves and Layers  
-
 * UIView Tutorial for iOS: How To Use UIView Animation
 * UIView Animation Tutorial: Practical Recipes
 * CALayers Tutorial for iOS: Introduction to CALayers
