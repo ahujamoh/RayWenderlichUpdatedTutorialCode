@@ -1,6 +1,7 @@
 Tutorial source: [Getting Started with Core Data Tutorial][1]
 
 The key point of the tutorial:
+
 1. The step to insert objects to CoreData
 * Get the managed object context (NSManagedObjectContext)
 * Create a new managed object and insert it into the context above
@@ -28,6 +29,7 @@ The key point of the tutorial:
 	    }
 	}
 	
+
 2. The step to fetch result from CoreData
 
 [1]:	http://www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
