@@ -8,9 +8,10 @@ The key point of the tutorial:
 	* Set the attributes of the managed object
 	* Save the object to the context
 
-	func saveName(name: String) {
-	// 1. 
-	let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	```
+		func saveName(name: String) {
+		// 1. 
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 		let managedContext = appDelegate.managedObjectContext
 	        
 		// 2. 
@@ -21,13 +22,15 @@ The key point of the tutorial:
 		person.setValue(name, forKey: "name")
 	    
 		// 4	
-	    do {
-	        try managedContext.save()  
-	        people.append(person)
+		do {
+			try managedContext.save()  
+	        	people.append(person)
 	    } catch let error as NSError {
 	        print("Could not save \(error), \(error.userInfo)")
 	    }
 	}
+	
+	```
 
 2. The step to fetch result from CoreData
 
