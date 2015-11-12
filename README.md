@@ -53,7 +53,7 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * Realm Tutorial
 * Core Data Tutorial: Multiple Managed Object Contexts
 * Core Data Migrations Tutorial: Lightweight Migrations
-* Getting Started with Core Data Tutorial
+* [Getting Started with Core Data Tutorial][7]
 
 
 ### **Networking**
@@ -147,7 +147,7 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * How to Install iOS 9 and watchOS 2
 
 
-## **[Using Objective-C][7]**
+## **[Using Objective-C][8]**
 ### **For complete beginners to programming**
 * Learn to Code iOS Apps 1: Welcome to Programming
 * Learn to Code iOS Apps 2: Strings, Arrays, Objects and Classes
@@ -162,9 +162,9 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 * Objectively Speaking 2: A Crash Course in Objective C for iOS 6
 
 ### **Beginning iPhone Programming**
-* [iOS Tutorial: How To Create A Simple iPhone App: Part 1/3][8]
-* [iOS Tutorial: How To Create A Simple iPhone App: Part 2/3][9]
-* [iOS Tutorial: How To Create A Simple iPhone App: Part 3/3][10]
+* [iOS Tutorial: How To Create A Simple iPhone App: Part 1/3][9]
+* [iOS Tutorial: How To Create A Simple iPhone App: Part 2/3][10]
+* [iOS Tutorial: How To Create A Simple iPhone App: Part 3/3][11]
 * How to Submit Your App to Apple: From No Account to App Store, Part 1
 * How to Submit Your App to Apple: From No Account to App Store, Part 2
 
@@ -413,7 +413,8 @@ Learning step by step from RayWenderlich's website in new version of Xcode.
 [4]:	/StrutsPrblem
 [5]:	/VacationSpots
 [6]:	/Prepped
-[7]:	http://www.raywenderlich.com/tutorial-archive
-[8]:	/ScaryBugs-Part%201
-[9]:	/ScaryBugs-Part%202
-[10]:	/ScaryBugs-Part%203
+[7]:	/HitList
+[8]:	http://www.raywenderlich.com/tutorial-archive
+[9]:	/ScaryBugs-Part%201
+[10]:	/ScaryBugs-Part%202
+[11]:	/ScaryBugs-Part%203
