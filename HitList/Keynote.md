@@ -6,18 +6,18 @@ The key point of the tutorial:
 * Create a new managed object and insert it into the context above
 * Set the attributes of the managed object
 * Save the object to the context
-
+	
 	func saveName(name: String) {
 		// 1. 
-	    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-	    let managedContext = appDelegate.managedObjectContext
+		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+		let managedContext = appDelegate.managedObjectContext
 	        
-	     // 2. 
-	     let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
-	      let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+		// 2. 
+		let entity = NSEntityDescription.entityForName("Person", inManagedObjectContext: managedContext)
+		let person = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
 	      
 		// 3  
-	    person.setValue(name, forKey: "name")
+		person.setValue(name, forKey: "name")
 	    
 		// 4	
 	    do {
