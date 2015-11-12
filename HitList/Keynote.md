@@ -3,10 +3,11 @@ Tutorial source: [Getting Started with Core Data Tutorial][1]
 The key point of the tutorial:
 
 1. The step to insert objects to CoreData
-* Get the managed object context (NSManagedObjectContext)
-* Create a new managed object and insert it into the context above
-* Set the attributes of the managed object
-* Save the object to the context
+	* Get the managed object context (NSManagedObjectContext)
+	* Create a new managed object and insert it into the context above
+	* Set the attributes of the managed object
+	* Save the object to the context  
+
 	
 	func saveName(name: String) {
 		// 1. 
