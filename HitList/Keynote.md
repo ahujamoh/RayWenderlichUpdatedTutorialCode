@@ -6,7 +6,7 @@ The key point of the tutorial:
 	* Get the managed object context (NSManagedObjectContext)
 	* Create a new managed object and insert it into the context above
 	* Set the attributes of the managed object
-	* Save the object to the context  
+	* Save the object to the context
 
 	func saveName(name: String) {
 	// 1. 
@@ -28,7 +28,6 @@ The key point of the tutorial:
 	        print("Could not save \(error), \(error.userInfo)")
 	    }
 	}
-	
 
 2. The step to fetch result from CoreData
 
