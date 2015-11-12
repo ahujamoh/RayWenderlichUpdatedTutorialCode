@@ -8,9 +8,9 @@ The key point of the tutorial:
 	* Set the attributes of the managed object
 	* Save the object to the context  
 
-	 func saveName(name: String) {
-		// 1. 
-		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+	func saveName(name: String) {
+	// 1. 
+	let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 		let managedContext = appDelegate.managedObjectContext
 	        
 		// 2. 
