@@ -8,7 +8,7 @@ The key point of the tutorial:
 	* Set the attributes of the managed object
 	* Save the object to the context
 
-	\`\`\`
+	```
 		func saveName(name: String) {
 		// 1. 
 		let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -30,13 +30,14 @@ The key point of the tutorial:
 		}
 	}
 	 
-	\`\`\`
+	```
 
 2. The step to fetch result from CoreData
 * Get the managed object context
 * Create the fetch request(NSFetchRequest)
 * The context perform your fetch action
 
+```
 	// 1
 	let appDelegate = UIApplication.sharedApplication().delegate as! Applegate
 	let managedContext = appDelegate.managedContext
@@ -51,5 +52,6 @@ The key point of the tutorial:
 	} catch let error as NSError {
 		print("Could not fetch \(error), \(error.userInfo)")
 	}
+```
 
 [1]:	http://www.raywenderlich.com/115695/getting-started-with-core-data-tutorial
