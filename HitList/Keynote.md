@@ -33,9 +33,9 @@ The key point of the tutorial:
 	```
 
 2. The step to fetch result from CoreData
-* Get the managed object context
-* Create the fetch request(NSFetchRequest)
-* The context perform your fetch action
+  * Get the managed object context
+  * Create the fetch request(NSFetchRequest)
+  * The context perform your fetch action
 
 ```
 	// 1
