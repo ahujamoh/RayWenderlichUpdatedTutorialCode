@@ -18,32 +18,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     // Override point for customization after application launch.
     
-    // 1. Insert
-    let entity = NSEntityDescription.entityForName("Bowtie", inManagedObjectContext: managedObjectContext)
+/// Test code begin
     
-    let bowtie = Bowtie(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+//    // 1. Insert
+//    let entity = NSEntityDescription.entityForName("Bowtie", inManagedObjectContext: managedObjectContext)
+//    
+//    let bowtie = Bowtie(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
+//    
+//    bowtie.name = "My bow tie"
+//    bowtie.lastWorn = NSDate()
+//
+//    do {
+//        try
+//            managedObjectContext.save()
+//    } catch let error as NSError {
+//        print("\(error)");
+//    }
+//    
+//    // 2 Retrieve
+//    let request = NSFetchRequest(entityName: "Bowtie")
+//    
+//    do {
+//        let ties = try managedObjectContext.executeFetchRequest(request) as! [Bowtie]
+//        let sample = ties[0]
+//        print("Name:\(sample.name), Worn: \(sample.lastWorn)")
+//    } catch let error as NSError {
+//            print("\(error)");
+//    }
     
-    bowtie.name = "My bow tie"
-    bowtie.lastWorn = NSDate()
-
-    do {
-        try
-            managedObjectContext.save()
-    } catch let error as NSError {
-        print("\(error)");
-    }
+ /// Test code end
     
-    // 2 Retrieve
-    let request = NSFetchRequest(entityName: "Bowtie")
-    
-    do {
-        let ties = try managedObjectContext.executeFetchRequest(request) as! [Bowtie]
-        let sample = ties[0]
-        print("Name:\(sample.name), Worn: \(sample.lastWorn)")
-    } catch let error as NSError {
-            print("\(error)");
-    }
-    
+    let viewController = self.window!.rootViewController as! ViewController
+    viewController.managedContext = self.managedObjectContext
     
     return true
   }
