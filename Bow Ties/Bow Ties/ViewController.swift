@@ -166,6 +166,12 @@ class ViewController: UIViewController {
                 managedContext.save()
         } catch let error as NSError {
             print("Could not save \(error), \(error.userInfo)")
+            
+            if error.code == NSValidationNumberTooLargeError || error.code == NSValidationNumberTooSmallError {
+                rate(currentBowtie)
+            } else {
+                populate(currentBowtie)
+            }
         }
         
         populate(currentBowtie)
