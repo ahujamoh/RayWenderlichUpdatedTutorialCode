@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B098E561BFD789400D1910B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B098E551BFD789400D1910B /* CoreDataStack.swift */; };
+		1B098E591BFDA84700D1910B /* Dog Walk.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B098E571BFDA84700D1910B /* Dog Walk.xcdatamodeld */; };
+		1B098E5E1BFDAC2500D1910B /* Dog+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B098E5A1BFDAC2500D1910B /* Dog+CoreDataProperties.swift */; };
+		1B098E5F1BFDAC2500D1910B /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B098E5B1BFDAC2500D1910B /* Dog.swift */; };
+		1B098E601BFDAC2500D1910B /* Walk+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B098E5C1BFDAC2500D1910B /* Walk+CoreDataProperties.swift */; };
+		1B098E611BFDAC2500D1910B /* Walk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B098E5D1BFDAC2500D1910B /* Walk.swift */; };
 		FEDA2D8D1B5923B200C68F83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA2D8C1B5923B200C68F83 /* AppDelegate.swift */; };
 		FEDA2D8F1B5923B200C68F83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDA2D8E1B5923B200C68F83 /* ViewController.swift */; };
 		FEDA2D921B5923B200C68F83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FEDA2D901B5923B200C68F83 /* Main.storyboard */; };
@@ -15,6 +21,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B098E551BFD789400D1910B /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		1B098E581BFDA84700D1910B /* Dog Walk.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Dog Walk.xcdatamodel"; sourceTree = "<group>"; };
+		1B098E5A1BFDAC2500D1910B /* Dog+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dog+CoreDataProperties.swift"; path = "../Dog+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B098E5B1BFDAC2500D1910B /* Dog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dog.swift; path = ../Dog.swift; sourceTree = "<group>"; };
+		1B098E5C1BFDAC2500D1910B /* Walk+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Walk+CoreDataProperties.swift"; path = "../Walk+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1B098E5D1BFDAC2500D1910B /* Walk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Walk.swift; path = ../Walk.swift; sourceTree = "<group>"; };
 		FEDA2D891B5923B200C68F83 /* Dog Walk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Dog Walk.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEDA2D8C1B5923B200C68F83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FEDA2D8E1B5923B200C68F83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +47,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B098E621BFDAC3100D1910B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B098E571BFDA84700D1910B /* Dog Walk.xcdatamodeld */,
+				1B098E5A1BFDAC2500D1910B /* Dog+CoreDataProperties.swift */,
+				1B098E5B1BFDAC2500D1910B /* Dog.swift */,
+				1B098E5C1BFDAC2500D1910B /* Walk+CoreDataProperties.swift */,
+				1B098E5D1BFDAC2500D1910B /* Walk.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		FEDA2D801B5923B200C68F83 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +78,10 @@
 		FEDA2D8B1B5923B200C68F83 /* Dog Walk */ = {
 			isa = PBXGroup;
 			children = (
+				1B098E621BFDAC3100D1910B /* Model */,
 				FEDA2D8C1B5923B200C68F83 /* AppDelegate.swift */,
 				FEDA2D8E1B5923B200C68F83 /* ViewController.swift */,
+				1B098E551BFD789400D1910B /* CoreDataStack.swift */,
 				FEDA2D901B5923B200C68F83 /* Main.storyboard */,
 				FEDA2D931B5923B200C68F83 /* Assets.xcassets */,
 				FEDA2D951B5923B200C68F83 /* LaunchScreen.storyboard */,
@@ -134,7 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B098E561BFD789400D1910B /* CoreDataStack.swift in Sources */,
+				1B098E601BFDAC2500D1910B /* Walk+CoreDataProperties.swift in Sources */,
+				1B098E5E1BFDAC2500D1910B /* Dog+CoreDataProperties.swift in Sources */,
+				1B098E5F1BFDAC2500D1910B /* Dog.swift in Sources */,
+				1B098E611BFDAC2500D1910B /* Walk.swift in Sources */,
 				FEDA2D8F1B5923B200C68F83 /* ViewController.swift in Sources */,
+				1B098E591BFDA84700D1910B /* Dog Walk.xcdatamodeld in Sources */,
 				FEDA2D8D1B5923B200C68F83 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,6 +318,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1B098E571BFDA84700D1910B /* Dog Walk.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B098E581BFDA84700D1910B /* Dog Walk.xcdatamodel */,
+			);
+			currentVersion = 1B098E581BFDA84700D1910B /* Dog Walk.xcdatamodel */;
+			path = "Dog Walk.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FEDA2D811B5923B200C68F83 /* Project object */;
 }
