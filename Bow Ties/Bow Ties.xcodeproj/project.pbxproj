@@ -56,7 +56,6 @@
 			isa = PBXGroup;
 			children = (
 				FEFA23E31B52BC7300D02E4B /* Bow Ties */,
-				FEFA23E21B52BC7300D02E4B /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -66,6 +65,7 @@
 				FEFA23E11B52BC7300D02E4B /* Bow Ties.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		FEFA23E31B52BC7300D02E4B /* Bow Ties */ = {
@@ -80,6 +80,7 @@
 				FEFA24151B52BC8800D02E4B /* SampleData.plist */,
 				FEFA23F31B52BC7300D02E4B /* Info.plist */,
 				FEFA23EB1B52BC7300D02E4B /* Bow_Ties.xcdatamodeld */,
+				FEFA23E21B52BC7300D02E4B /* Products */,
 			);
 			path = "Bow Ties";
 			sourceTree = "<group>";
