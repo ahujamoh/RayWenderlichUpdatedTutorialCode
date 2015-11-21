@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 let filterViewControllerSegueIdentifier = "toFilterViewController"
 let venueCellIdentifier = "VenueCell"
@@ -15,10 +16,15 @@ class ViewController: UIViewController {
   
   @IBOutlet weak var tableView: UITableView!
   var coreDataStack: CoreDataStack!
+    var fetchRequest: NSFetchRequest!
+    var venues: [Venue]!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let model = coreDataStack.context.persistentStoreCoordinator!.managedObjectModel
+    fetchRequest = model.fetchRequestTemplatesByName("FetchRequest")
+    fetchAndReload()
   }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -48,4 +54,14 @@ extension ViewController: UITableViewDataSource {
     
     return cell
   }
+    
+    func fetchAndReload() {
+        do {
+            venues =
+                try coreDataStack.context.executeFetchRequest(fetchRequest) as! [Venue]
+            tableView.reloadData()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
 }
