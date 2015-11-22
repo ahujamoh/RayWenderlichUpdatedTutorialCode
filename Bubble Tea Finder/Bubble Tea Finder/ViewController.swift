@@ -17,19 +17,59 @@ class ViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
   var coreDataStack: CoreDataStack!
     var fetchRequest: NSFetchRequest!
-    var venues: [Venue]!
+//    var venues: [Venue]!
+    var venues: [Venue]! = []
+    
+    var asyncFetchRequest: NSAsynchronousFetchRequest!
   
   override func viewDidLoad() {
     super.viewDidLoad()
 
+    let batchUpdate = NSBatchUpdateRequest(entityName: "Venue")
+    
+    batchUpdate.propertiesToUpdate = ["favorite": NSNumber(bool: true)]
+    batchUpdate.affectedStores = coreDataStack.context.persistentStoreCoordinator!.persistentStores
+    
+    batchUpdate.resultType = .UpdatedObjectsCountResultType
+
+    do {
+        let batchResult = try coreDataStack.context.executeRequest(batchUpdate) as! NSBatchUpdateResult
+        
+        print("Records updated \(batchResult.result)")
+    } catch let error as NSError {
+        print("Could not update \(error), \(error.userInfo)")
+    }
+    
+    // The first time implementation===============
 //    let model = coreDataStack.context.persistentStoreCoordinator!.managedObjectModel
 //    fetchRequest = model.fetchRequestTemplateForName("FetchRequest")
 //    fetchAndReload()
     
+    // The first time implementation===============
+//    fetchRequest = NSFetchRequest(entityName: "Venue")
+//    
+//    fetchAndReload()
+
+    // The first time implementation===============
+    // 1
     fetchRequest = NSFetchRequest(entityName: "Venue")
     
-    fetchAndReload()
-  }
+    // 2
+    asyncFetchRequest = NSAsynchronousFetchRequest(fetchRequest: fetchRequest) {
+        [unowned self] (result: NSAsynchronousFetchResult!) -> Void in
+        self.venues = result.finalResult as! [Venue]
+        self.tableView.reloadData()
+    }
+    
+    // 3
+    do {
+        try coreDataStack.context.executeRequest(asyncFetchRequest)
+        // Returns immediately, cancel here if you want
+    } catch let error as NSError {
+        print("Could not fetch \(error), \(error.userInfo)")
+    }
+    
+    }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     
