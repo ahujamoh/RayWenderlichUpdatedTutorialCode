@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import CoreData
+
+protocol FilterViewControllerDelegate: class {
+    func filterViewController(filter: FilterViewController, didSelectPredicate predicate: NSPredicate?, sortDescription: NSSortDescriptor?)
+}
 
 class FilterViewController: UITableViewController {
   
@@ -30,18 +35,142 @@ class FilterViewController: UITableViewController {
   @IBOutlet weak var nameZASortCell: UITableViewCell!
   @IBOutlet weak var distanceSortCell: UITableViewCell!
   @IBOutlet weak var priceSortCell: UITableViewCell!
+    
+    var coreDataStack: CoreDataStack!
+    
+    lazy var cheapVenuePredicate: NSPredicate = {
+        var predicate = NSPredicate(format: "priceInfo.priceCategory == %@", "$")
+        return predicate
+    }()
+    
+    lazy var moderateVenuePredicate: NSPredicate = {
+        var predicate = NSPredicate(format: "priceInfo.priceCategory == %@", "$$")
+        return predicate
+    }()
+    
+    lazy var expensiveVenuePredicate: NSPredicate = {
+        var predicate = NSPredicate(format: "priceInfo.priceCategory == %@", "$$$")
+        return predicate
+    }()
   
+    weak var delegate: FilterViewControllerDelegate?
+    var selectedSortDescriptior: NSSortDescriptor?
+    var selectedPredicate: NSPredicate?
 
-  //MARK - UITableViewDelegate methods
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        populateCheapVenueCountLabel()
+        populateModerateVenueCountLabel()
+        populateExpensiveVenueCountLabel()
+        populateDealsCountLabel()
+    }
+    
+  //MARK: - UITableViewDelegate methods
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    let cell = tableView.cellForRowAtIndexPath(indexPath)!
     
+    switch cell {
+        // Price section
+    case cheapVenueCell:
+        selectedPredicate = cheapVenuePredicate
+    case moderateVenueCell:
+        selectedPredicate = moderateVenuePredicate
+    case expensiveVenueCell:
+        selectedPredicate = expensiveVenuePredicate
+    default:
+        print("default case")
+    }
+    
+    cell.accessoryType = .Checkmark
   }
   
-  // MARK - UIButton target action
+  // MARK: - UIButton target action
   
   @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
     
-    dismissViewControllerAnimated(true, completion:nil)
+    delegate!.filterViewController(self, didSelectPredicate: selectedPredicate, sortDescription: selectedSortDescriptior)
+    
+    dismissViewControllerAnimated(true, completion: nil)
   }
+    
+    // MARK: - Populate the labels
+    func populateCheapVenueCountLabel() {
+        // $ fetch request
+        let fetchRequest = NSFetchRequest(entityName: "Venue")
+        fetchRequest.resultType = .CountResultType
+        fetchRequest.predicate = cheapVenuePredicate
+        
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [NSNumber]
+            
+            let count = results.first!.integerValue
+            firstPriceCategoryLabel.text = "\(count) bubble tea places"
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
+    func populateModerateVenueCountLabel() {
+        // $$ fetch request 
+        let fetchRequest = NSFetchRequest(entityName: "Venue")
+        fetchRequest.resultType = .CountResultType
+        fetchRequest.predicate = moderateVenuePredicate
+        
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [NSNumber]
+            
+            let count = results.first!.integerValue
+            secondPriceCategoryLabel.text = "\(count) bubble taa places"
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
+    func populateExpensiveVenueCountLabel() {
+        // $$ fetch request
+        let fetchRequest = NSFetchRequest(entityName: "Venue")
+        fetchRequest.predicate = expensiveVenuePredicate
+        
+        var error: NSError?
+       let count = coreDataStack.context.countForFetchRequest(fetchRequest, error: &error)
+        
+        if count != NSNotFound {
+            thirdPriceCategoryLabel.text = "\(count) bubble taa places"
+        } else {
+            print("Could not fetch \(error), \(error?.userInfo)")
+        }
+    }
+    
+    //=======================
+    func populateDealsCountLabel() {
+        // 1
+        let fetchRequest = NSFetchRequest(entityName: "Venue")
+        fetchRequest.resultType = .DictionaryResultType
+        
+        // 2
+        let sumExpressionDesc = NSExpressionDescription()
+        sumExpressionDesc.name = "sumDeals"
+        
+        // 3
+        sumExpressionDesc.expression = NSExpression(forFunction: "sum:", arguments: [NSExpression(forKeyPath: "specialCount")])
+        
+        sumExpressionDesc.expressionResultType = .Integer32AttributeType
+        
+        // 4
+        fetchRequest.propertiesToFetch = [sumExpressionDesc]
+        
+        // 5 
+        do {
+            let results = try coreDataStack.context.executeFetchRequest(fetchRequest) as! [NSDictionary]
+            
+            let resultDict = results.first!
+            let numDeals = resultDict["sumDeals"]
+            numDealsLabel.text = "\(numDeals!) total deals"
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
 }
