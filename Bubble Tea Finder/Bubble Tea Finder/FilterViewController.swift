@@ -38,6 +38,23 @@ class FilterViewController: UITableViewController {
     
     var coreDataStack: CoreDataStack!
     
+    // ================================
+    lazy var offeringDealPredicate: NSPredicate = {
+        var pr = NSPredicate(format: "specialCount > 0")
+        return pr
+    }()
+    
+    lazy var walkingDestancePredicate: NSPredicate = {
+        var pr = NSPredicate(format: "location.distance < 500")
+        return pr
+    }()
+    
+    lazy var hasUserTipsPredicate: NSPredicate = {
+        var pr = NSPredicate(format: "stats.tipCount > 0")
+        return pr
+    }()
+    
+    // ================================
     lazy var cheapVenuePredicate: NSPredicate = {
         var predicate = NSPredicate(format: "priceInfo.priceCategory == %@", "$")
         return predicate
@@ -53,6 +70,22 @@ class FilterViewController: UITableViewController {
         return predicate
     }()
   
+    // ================================
+    lazy var nameSortDescriptor: NSSortDescriptor = {
+        var sd = NSSortDescriptor(key: "name", ascending: true, selector: "localizedStandardCompare:")
+        return sd
+    }()
+    
+    lazy var distanceSortDescriptor: NSSortDescriptor = {
+        var sd = NSSortDescriptor(key: "location.distance", ascending: true)
+        return sd
+    }()
+    
+    lazy var priceSortDescriptor: NSSortDescriptor = {
+        var sd = NSSortDescriptor(key: "priceInfo.priceCategory", ascending: true)
+        return sd
+    }()
+    
     weak var delegate: FilterViewControllerDelegate?
     var selectedSortDescriptior: NSSortDescriptor?
     var selectedPredicate: NSPredicate?
@@ -79,6 +112,22 @@ class FilterViewController: UITableViewController {
         selectedPredicate = moderateVenuePredicate
     case expensiveVenueCell:
         selectedPredicate = expensiveVenuePredicate
+        // Most popular section
+    case offeringDealCell:
+        selectedPredicate = offeringDealPredicate
+    case walkingDistanceCell:
+        selectedPredicate = walkingDestancePredicate
+    case userTipsCell:
+        selectedPredicate = hasUserTipsPredicate
+        // Sort by section
+    case nameAZSortCell:
+        selectedSortDescriptior = nameSortDescriptor
+    case nameZASortCell:
+        selectedSortDescriptior = nameSortDescriptor.reversedSortDescriptor as? NSSortDescriptor
+    case distanceSortCell:
+        selectedSortDescriptior = distanceSortDescriptor
+    case priceSortCell:
+        selectedSortDescriptior = priceSortDescriptor
     default:
         print("default case")
     }
