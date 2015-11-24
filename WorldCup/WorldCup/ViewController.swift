@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 private let teamCellIdentifier = "teamCellReuseIdentifier"
 
 class ViewController: UIViewController {
   
   var coreDataStack: CoreDataStack!
+    
+    var fetchedResultsController: NSFetchedResultsController!
   
   @IBOutlet weak var tableView: UITableView!
   @IBOutlet weak var addButton: UIBarButtonItem!
@@ -21,12 +24,29 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
     
+    // 1
+    let fetchRequest = NSFetchRequest(entityName: "Team")
+    let sortDescriptor = NSSortDescriptor(key: "teamName", ascending: true)
+    fetchRequest.sortDescriptors = [sortDescriptor]
+    
+    // 2
+    fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    
+    // 3
+       do {
+            try fetchedResultsController.performFetch()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.localizedDescription)")
+        }
+
   }
   
   func configureCell(cell: TeamCell, indexPath: NSIndexPath) {
-    cell.flagImageView.backgroundColor = UIColor.blueColor()
-    cell.teamLabel.text = "Team Name"
-    cell.scoreLabel.text = "Wins: 0"
+    let team = fetchedResultsController.objectAtIndexPath(indexPath) as! Team
+    
+    cell.flagImageView.image = UIImage(named: team.imageName!)
+    cell.teamLabel.text = team.teamName
+    cell.scoreLabel.text = "Wins:\(team.wins!)"
   }
 }
 
@@ -35,13 +55,14 @@ extension ViewController: UITableViewDataSource {
   func numberOfSectionsInTableView
     (tableView: UITableView) -> Int {
       
-      return 1
+        return fetchedResultsController.sections!.count
   }
   
   func tableView(tableView: UITableView,
     numberOfRowsInSection section: Int) -> Int {
       
-      return 20
+        let sectionInfo = fetchedResultsController.sections![section]
+      return sectionInfo.numberOfObjects
   }
   
   func tableView(tableView: UITableView,
