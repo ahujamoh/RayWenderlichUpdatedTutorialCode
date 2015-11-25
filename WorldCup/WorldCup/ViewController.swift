@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     fetchRequest.sortDescriptors = [sortDescriptor]
     
     // 2
-    fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+    fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: coreDataStack.context, sectionNameKeyPath: "qualifyingZone", cacheName: nil)
     
     // 3
        do {
@@ -78,12 +78,24 @@ extension ViewController: UITableViewDataSource {
       
       return cell
   }
+    
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = fetchedResultsController.sections![section]
+        return sectionInfo.name
+    }
 }
 
 extension ViewController: UITableViewDelegate {
   
   func tableView(tableView: UITableView,
     didSelectRowAtIndexPath indexPath: NSIndexPath) {
-      
+      let team = fetchedResultsController.objectAtIndexPath(indexPath) as! Team
+        
+        let wins = team.wins!.integerValue
+        team.wins = NSNumber(integer: wins + 1)
+        coreDataStack.saveContext()
+        
+        tableView.reloadData()
+        
   }
 }
