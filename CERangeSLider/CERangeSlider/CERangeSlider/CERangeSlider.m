@@ -29,6 +29,29 @@
 
 @implementation CERangeSlider
 
+#define GENERATE_SETTER(PROPERTY, TYPE, SETTER, UPDATER) \
+- (void)SETTER: (TYPE)PROPERTY { \
+    if (_##PROPERTY != PROPERTY) { \
+        _##PROPERTY = PROPERTY; \
+        [self UPDATER]; \
+    } \
+}
+
+GENERATE_SETTER(trackHighlightColor, UIColor *, setTrackHighlightColor, redrawLayers)
+GENERATE_SETTER(trackColor, UIColor *, setTrackColor, redrawLayers)
+GENERATE_SETTER(knobColor, UIColor *, setKnobColor, redrawLayers)
+GENERATE_SETTER(curvaceousness, float, setCurvaceousness, redrawLayers)
+GENERATE_SETTER(maximumValue, float, setMaximumValue, setLayerFrames)
+GENERATE_SETTER(minimumValue, float, setMinimumValue, setLayerFrames)
+GENERATE_SETTER(lowerValue, float, setLowerValue, setLayerFrames)
+GENERATE_SETTER(upperValue, float, setUpperValue, setLayerFrames)
+
+- (void)redrawLayers {
+    [_upperKnobLayer setNeedsDisplay];
+    [_lowerKnobLayer setNeedsDisplay];
+    [_trackLayer setNeedsDisplay];
+}
+
 - (id)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {

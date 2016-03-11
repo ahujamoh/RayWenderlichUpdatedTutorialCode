@@ -10,9 +10,21 @@
 
 @interface CERangeSlider : UIControl
 
+/**
+ *  default 10.0.
+ */
 @property (nonatomic) float maximumValue;
+/**
+ *  default 0.0
+ */
 @property (nonatomic) float minimumValue;
+/**
+ *  default 8.0
+ */
 @property (nonatomic) float upperValue;
+/**
+ *  default 2.0
+ */
 @property (nonatomic) float lowerValue;
 
 @property (nonatomic) UIColor *trackColor;

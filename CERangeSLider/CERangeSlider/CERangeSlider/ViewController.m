@@ -22,16 +22,23 @@ static NSUInteger const kMargin = 20;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor lightGrayColor];
+//    self.view.backgroundColor = [UIColor lightGrayColor];
     
     _rangeSlider = [[CERangeSlider alloc] initWithFrame:CGRectMake(kMargin, kMargin, self.view.frame.size.width - kMargin * 2, 30)];
 //    self.rangeSlider.backgroundColor = [UIColor whiteColor];
     [self.rangeSlider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:self.rangeSlider];
+    
+    [self performSelector:@selector(updateState) withObject:nil afterDelay:1.0f];
 }
 
 - (void)sliderValueChanged: (id)control {
     NSLog(@"Slider value changed: (%.2f %2.f)", _rangeSlider.lowerValue, _rangeSlider.upperValue);
+}
+
+- (void)updateState {
+    _rangeSlider.trackHighlightColor = [UIColor redColor];
+    _rangeSlider.curvaceousness = 0.0;
 }
 
 
